@@ -16,9 +16,12 @@ mongoose
 		app.listen(port, function () {
 			console.log("Server: " + port);
 			console.log("Database: MongoDB");
-			console.log(result);
 		});
 	})
 	.catch((err) => {
 		console.log(err);
 	});
+
+var Users = require("./routes/Users");
+
+app.use("/users", Users);
