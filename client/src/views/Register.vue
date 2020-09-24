@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 nt-5 mx-auto">
+			<div class="col-md-6 mt-5 mx-auto">
 				<form v-on:submit.prevent="register">
 					<h1 class="h3 mb-3 font-weight-normal">
 						Register An Account
@@ -47,13 +47,13 @@ export default {
 	methods: {
 		register() {
 			axios
-				.post("ttp://localhost:5000/users/register", {
+				.post("http://localhost:5000/users/register", {
 					firstName: this.firstName,
 					lastName: this.lastName,
 					email: this.email,
 					password: this.password,
 				})
-				.then((res) => {
+				.then(() => {
 					router.push({ name: "Login" });
 				})
 				.catch((err) => {

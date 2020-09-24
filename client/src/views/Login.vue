@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 nt-5 mx-auto">
+			<div class="col-md-6 mt-5 mx-auto">
 				<form v-on:submit.prevent="login">
 					<h1 class="h3 mb-3 font-weight-normal">
 						Please Sign In
@@ -38,7 +38,7 @@ export default {
 	methods: {
 		login() {
 			axios
-				.post("ttp://localhost:5000/users/login", {
+				.post("http://localhost:5000/users/login", {
 					email: this.email,
 					password: this.password,
 				})
