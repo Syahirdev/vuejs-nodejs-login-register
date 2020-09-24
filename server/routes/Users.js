@@ -74,4 +74,14 @@ users.post("/login", (req, res) => {
 		});
 });
 
+users.get("/userlist", (req, res) => {
+	User.find()
+		.then((result) => {
+			res.send(result);
+		})
+		.catch((err) => {
+			res.send("error: " + err);
+		});
+});
+
 module.exports = users;

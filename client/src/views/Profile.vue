@@ -2,24 +2,28 @@
 	<div class="container">
 		<div class="jumbotron mt-5">
 			<div class="col-sm-8 mx-auto">
-				<h1 class="text-center">Profile</h1>
+				<h1 class="text-center">My Profile</h1>
 			</div>
-			<table class="table col-md-6 mx-auto">
-				<tbody>
-					<tr></tr>
+
+			<table class="table col-md-6 mt-5 mx-auto">
+				<thead class="thead-dark">
 					<tr>
-						<td>First Name</td>
-						<td>{{ firstName }}</td>
+						<th scope="col">First Name</th>
+						<td scope="col">{{ firstName }}</td>
 					</tr>
+				</thead>
+				<thead class="thead-dark">
 					<tr>
-						<td>Last Name</td>
-						<td>{{ lastName }}</td>
+						<th scope="col">Last Name</th>
+						<td scope="col">{{ lastName }}</td>
 					</tr>
+				</thead>
+				<thead class="thead-dark">
 					<tr>
-						<td>Email</td>
-						<td>{{ email }}</td>
+						<th scope="col">Email</th>
+						<td scope="col">{{ email }}</td>
 					</tr>
-				</tbody>
+				</thead>
 			</table>
 		</div>
 	</div>
@@ -39,3 +43,9 @@ export default {
 	},
 };
 </script>
+
+<style scoped>
+td {
+	background-color: white;
+}
+</style>

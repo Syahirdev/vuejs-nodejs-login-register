@@ -16,8 +16,10 @@
 <style scoped>
 a {
 	text-decoration: none;
+	color: rgba(56, 56, 56, 0.575);
 }
 a:hover {
 	text-decoration: none;
+	color: rgba(56, 56, 56, 0.897);
 }
 </style>

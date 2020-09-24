@@ -27,7 +27,10 @@
 					<router-link class="nav-link" to="/profile">Profile</router-link>
 				</li>
 				<li v-if="auth == 'loggedin'" class="nav-item">
-					<a class="nav-link" href="" v-on:click="logout">Logout</a>
+					<router-link class="nav-link" to="/userlist">User List</router-link>
+				</li>
+				<li v-if="auth == 'loggedin'" class="nav-item">
+					<a class="nav-link" href="/" v-on:click="logout">Logout</a>
 				</li>
 			</ul>
 		</div>
