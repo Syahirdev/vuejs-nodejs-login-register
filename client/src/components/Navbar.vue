@@ -17,17 +17,17 @@
 				<li class="nav-item">
 					<router-link class="nav-link" to="/">Home</router-link>
 				</li>
-				<li class="nav-item">
+				<li v-if="auth == ''" class="nav-item">
 					<router-link class="nav-link" to="/login">Login</router-link>
 				</li>
-				<li class="nav-item">
+				<li v-if="auth == ''" class="nav-item">
 					<router-link class="nav-link" to="/register">Register</router-link>
 				</li>
-				<li class="nav-item">
+				<li v-if="auth == 'loggedin'" class="nav-item">
 					<router-link class="nav-link" to="/profile">Profile</router-link>
 				</li>
-				<li class="nav-item">
-					<router-link class="nav-link" to="/logout">Logout</router-link>
+				<li v-if="auth == 'loggedin'" class="nav-item">
+					<a class="nav-link" href="" v-on:click="logout">Logout</a>
 				</li>
 			</ul>
 		</div>
@@ -35,5 +35,29 @@
 </template>
 
 <script>
-export default {};
+import EventBus from "./EventBus";
+
+EventBus.$on("logged-in", (test) => {
+	console.log(test);
+});
+export default {
+	data() {
+		return {
+			auth: "",
+			user: "",
+		};
+	},
+
+	methods: {
+		logout() {
+			localStorage.removeItem("usertoken");
+		},
+	},
+
+	mounted() {
+		EventBus.$on("logged-in", (status) => {
+			this.auth = status;
+		});
+	},
+};
 </script>
